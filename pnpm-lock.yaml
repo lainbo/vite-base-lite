@@ -11,6 +11,7 @@ specifiers:
   eslint-plugin-vue: ^8.7.1
   lodash: ^4.17.21
   pinia: ^2.0.13
+  postcss-px-to-viewport: ^1.1.1
   prettier: ^2.6.2
   sass: ^1.50.1
   unplugin-auto-import: ^0.7.1
@@ -38,6 +39,7 @@ devDependencies:
   eslint: 7.32.0
   eslint-plugin-prettier: 4.0.0_eslint@7.32.0+prettier@2.6.2
   eslint-plugin-vue: 8.7.1_eslint@7.32.0
+  postcss-px-to-viewport: 1.1.1
   prettier: 2.6.2
   sass: 1.50.1
   unplugin-auto-import: 0.7.1_@vueuse+core@8.3.0+vite@2.9.5
@@ -1739,6 +1741,11 @@ packages:
     resolution: {integrity: sha512-q7C1ZW3FyjsJ+IpGB6ykX8OWWa5+6M+hEY0zXBlzq1Sq1IPY9GeI3CQ9b2i6CMIYoeSuFhop2Av/OhCxClXqag==}
     dev: true
 
+  /object-assign/4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /object-inspect/1.12.0:
     resolution: {integrity: sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==}
     dev: true
@@ -1829,6 +1836,13 @@ packages:
       vue: 3.2.33
       vue-demi: 0.12.5_vue@3.2.33
     dev: false
+
+  /postcss-px-to-viewport/1.1.1:
+    resolution: {integrity: sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==}
+    dependencies:
+      object-assign: 4.1.1
+      postcss: 8.4.12
+    dev: true
 
   /postcss-selector-parser/6.0.10:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}

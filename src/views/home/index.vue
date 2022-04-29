@@ -3,6 +3,8 @@
     home页面
     <GlobalTemplate ref="aa" />
     <a-button @click="goUrl('help')">跳去help页面</a-button>
+
+    <div class="w-300px h-300px bg-slate-400">1</div>
   </div>
 </template>
 
