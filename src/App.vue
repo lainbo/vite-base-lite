@@ -1,6 +1,11 @@
-<template>
-  <router-view />
-</template>
-<script setup></script>
+<script setup lang="ts">
+</script>
 
-<style></style>
+<template>
+  <!-- 因为HelloWorld是写在components里的，所以不用import -->
+  <HelloWorld />
+</template>
+
+<style scoped>
+
+</style>
