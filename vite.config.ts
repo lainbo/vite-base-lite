@@ -21,13 +21,13 @@ export default defineConfig({
 
     AutoImport({
       imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core', 'pinia'],
-      dts: 'src/auto-imports.d.ts',
+      dts: 'src/typings/auto-imports.d.ts',
       vueTemplate: true,
     }),
 
     Components({
       resolvers: [ArcoResolver()],
-      dts: 'src/components.d.ts',
+      dts: 'src/typings/components.d.ts',
     }),
     Unocss(),
     // 拆包插件
