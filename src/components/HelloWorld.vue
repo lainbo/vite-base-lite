@@ -19,6 +19,7 @@
       <!-- 图标来源 https://icones.js.org/ -->
       <!-- 直接复制即可，不用额外写任何的引入 -->
       <i i-twemoji-hammer-and-wrench />
+      <!-- 因为unocss写了主题，并命名了颜色为primary，所以可以写任意text-primary、bg-primary -->
       <i class="text-primary i-mdi-account-outline" />
     </div>
   </div>

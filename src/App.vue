@@ -1,11 +1,9 @@
-<script setup lang="ts">
-</script>
-
 <template>
+  <!-- 卸载component里的都是全局组件 -->
   <!-- 因为HelloWorld是写在components里的，所以不用import -->
   <HelloWorld />
 </template>
 
-<style scoped>
+<script setup lang="ts"></script>
 
-</style>
+<style scoped></style>
