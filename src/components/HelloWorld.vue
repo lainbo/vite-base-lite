@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-// ref、computed等等一系列的vue、vuex、vue-router、pinia、VueUse等等的api，全部不用手动引入，直接用
+// ref、computed等等一系列的vue、pinia、VueUse等等的api，全部不用手动引入，直接用
 const count = ref<number>(0)
 const double = computed(() => count.value * 2)
 
@@ -36,17 +36,6 @@ const { x, y } = useMouse()
 
 <style lang="scss" scoped>
 .box {
-  // 多个类名融合的可以用@apply也可以用--at-apply:
-  // 但是尽量不要这么用，因为如果写一个apply也会同样生成一个类，而不会去复用那些包含的class
-  // 比如这里就真的会生成一个.box { xxx…… }，最终生成和自己写没有区别，没有缩减体积的效果
-  // ps：--at-apply在一个组件写多了会出现<style>部分自动格式化失效的问题
-  // 这两个在uno v0.45.13之后的版本尽量不用，因为会导致vscode的unocss插件异常，后果是组件中class无高亮提示
-  // 详见 https://github.com/unocss/unocss/issues/1488
-  --at-apply: flex flex-col;
-  // 因为在uno的设置里配置了，所以可以写text-primary，bg-primary，c-primary等uno拥有的前缀
-  @apply w-251px aspect-ratio-square text-primary;
-
-  // 如果不是text也不是bg之类的，uno没有的class，可以用xxx: theme()指令
-  text-decoration-color: theme('colors.darkPrimary');
+  @apply bg-white p-20px rounded-10px shadow-md;
 }
 </style>

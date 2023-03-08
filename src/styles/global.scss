@@ -1,0 +1,39 @@
+.dark {
+  color-scheme: dark;
+}
+
+::selection {
+  @apply bg-primary text-#fff dark:bg-#646cff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  border-width: 0px;
+  @apply bg-#c9cdd4 dark:bg-#5f5f60;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-#86909c dark:bg-#929293;
+}
+
+::-webkit-scrollbar-track-piece {
+  @apply bg-#fff dark:bg-#272728;
+}
+
+::-webkit-scrollbar-corner {
+  @apply bg-transparent;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}

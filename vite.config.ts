@@ -1,11 +1,11 @@
-import path from 'path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
+import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
-import { chunkSplitPlugin } from 'vite-plugin-chunk-split'
 import AutoImport from 'unplugin-auto-import/vite'
-import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
+import DefineOptions from 'unplugin-vue-define-options/vite'
+import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
   base: './',
@@ -15,29 +15,19 @@ export default defineConfig({
     },
   },
   plugins: [
-    Vue({
-      reactivityTransform: true,
-    }),
+    vue(),
 
     AutoImport({
-      imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core', 'pinia'],
+      imports: ['vue', 'vue/macros', '@vueuse/core', 'pinia'],
       dts: 'src/typings/auto-imports.d.ts',
+      dirs: ['src/utils/common/'],
       vueTemplate: true,
     }),
-
+    Unocss(),
     Components({
       resolvers: [ArcoResolver()],
       dts: 'src/typings/components.d.ts',
     }),
-    Unocss(),
-    // 拆包插件
-    // 支持写库的名字和正则写文件夹
-    chunkSplitPlugin({
-      strategy: 'default',
-      customSplitting: {
-        customize: [/src\/utils/, /src\/assets/],
-        arco: ['@arco-design/web-vue'],
-      },
-    }),
+    DefineOptions(),
   ],
 })
