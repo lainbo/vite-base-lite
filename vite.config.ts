@@ -5,7 +5,6 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
-import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
   base: './',
@@ -25,7 +24,7 @@ export default defineConfig({
     }),
     Unocss(),
     Components({
-      resolvers: [ArcoResolver()],
+      resolvers: [],
       dts: 'src/typings/components.d.ts',
     }),
     DefineOptions(),

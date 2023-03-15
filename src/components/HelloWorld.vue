@@ -12,7 +12,7 @@
     </div>
 
     <!-- 组件不用手动引入，全自动按需引入 -->
-    <a-button type="primary" @click="count++"> count++ </a-button>
+    <button border="~" p="6px" @click="count++"> count++ </button>
 
     <div class="text-40px flex-c">
       <!-- 使用类名、属性均可 -->
