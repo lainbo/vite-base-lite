@@ -31,9 +31,6 @@ export default defineConfig({
     presetUno(),
     presetRemToPx(),
     presetWebFonts({
-      // 这里其实可以通过class="fonts-JetBrainsMono"这样的class给DOM一个字体，但是我们的场景更复杂些，我们需要让结果框能显示多种我们定义的字体
-      // 如：命名模式中，如果使用了class="fonts-JetBrainsMono"，这个class只会生成一个font-family: 'JetBrains Mono'，这个css不存在其他语言的字体，只有拉丁文，则文本框中的中文将会降级为微软雅黑之类的（翻译服务的报错消息、placeholder中都带有中文），因此不利于存在多种语言的情况
-      // 其实UnoCSS提供了解决方案，下方是一个数组，可以写很多的字体，但是感觉十分冗长，还需要对现有代码进行一些修改，我们现有方案是利用css变量进行拼接，已经比较优雅且可维护性强了，所以这里就不用UnoCSS的方案了，仅用作引入文字使用
       fonts: {
         provider: 'bunny',
         Inter: [{ name: 'Inter', weights: ['500'] }],
@@ -46,7 +43,6 @@ export default defineConfig({
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
-        'margin-top': '-1px',
       },
     }),
   ],

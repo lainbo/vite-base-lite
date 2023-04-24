@@ -3,8 +3,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Inspector from 'vite-plugin-vue-inspector'
 import Unocss from 'unocss/vite'
-import DefineOptions from 'unplugin-vue-define-options/vite'
 
 export default defineConfig({
   base: './',
@@ -17,7 +17,7 @@ export default defineConfig({
     vue(),
 
     AutoImport({
-      imports: ['vue', 'vue/macros', '@vueuse/core', 'pinia'],
+      imports: ['vue', '@vueuse/core', 'pinia'],
       dts: 'src/typings/auto-imports.d.ts',
       dirs: ['src/utils/common/'],
       vueTemplate: true,
@@ -27,6 +27,8 @@ export default defineConfig({
       resolvers: [],
       dts: 'src/typings/components.d.ts',
     }),
-    DefineOptions(),
+    Inspector({
+      toggleButtonVisibility: 'never',
+    }),
   ],
 })

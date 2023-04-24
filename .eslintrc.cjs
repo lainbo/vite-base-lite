@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   plugins: ['prettier'],
-  extends: ['@antfu', 'plugin:prettier/recommended'],
+  extends: ['@antfu', '@unocss', 'plugin:prettier/recommended'],
   ignorePatterns: ['**/*.css', '**/*.scss'], // 忽略css，scss文件
   rules: {
     // vue格式文件的3个tag顺序，前两个顺序无所谓
