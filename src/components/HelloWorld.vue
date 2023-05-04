@@ -6,29 +6,33 @@
       <p>鼠标Y轴：{{ y }}</p>
     </div>
 
-    <div border="~ #ddd" class="px-30px mx-40px">
+    <div border="~ #ddd" class="mx-40px px-30px">
       <p>count： {{ count }}</p>
-      <p>double：{{ double }}</p>
+      <p>count是否是2的幂：{{ double }}</p>
     </div>
 
     <!-- 组件不用手动引入，全自动按需引入 -->
-    <button border="~" p="6px" @click="count++"> count++ </button>
+    <button border="~" p="6px" @click="count += 1"> count++ </button>
 
-    <div class="text-40px flex-c">
+    <div class="flex-c text-40px">
       <!-- 使用类名、属性均可 -->
       <!-- 图标来源 https://icones.js.org/ -->
       <!-- 直接复制即可，不用额外写任何的引入 -->
       <i i-twemoji-hammer-and-wrench />
       <!-- 因为unocss写了主题，并命名了颜色为primary，所以可以写任意text-primary、bg-primary -->
-      <i class="text-primary i-mdi-account-outline" />
+      <i class="i-mdi-account-outline text-primary" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { isPowerOfTwo } from 'symbolic-operation'
+
 // ref、computed等等一系列的vue、pinia、VueUse等等的api，全部不用手动引入，直接用
 const count = ref<number>(0)
-const double = computed(() => count.value * 2)
+const double = computed(() => {
+  return isPowerOfTwo(count.value)
+})
 
 // VueUse的用法详见https://vueuse.org/functions.html#category=Browser
 const { x, y } = useMouse()
