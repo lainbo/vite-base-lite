@@ -8,7 +8,6 @@
 
     <div border="~ #ddd" class="mx-40px px-30px">
       <p>count： {{ count }}</p>
-      <p>count是否是2的幂：{{ double }}</p>
     </div>
 
     <!-- 组件不用手动引入，全自动按需引入 -->
@@ -26,13 +25,10 @@
 </template>
 
 <script setup lang="ts">
-import { isPowerOfTwo } from 'symbolic-operation'
 
 // ref、computed等等一系列的vue、pinia、VueUse等等的api，全部不用手动引入，直接用
 const count = ref<number>(0)
-const double = computed(() => {
-  return isPowerOfTwo(count.value)
-})
+
 
 // VueUse的用法详见https://vueuse.org/functions.html#category=Browser
 const { x, y } = useMouse()

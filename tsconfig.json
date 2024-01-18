@@ -1,27 +1,27 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "outDir": "./",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "noUnusedLocals": true,
     "paths": {
       "@/*": ["src/*"],
       "@MainView/*": ["src/views/MainView/*"]
     },
-    "removeComments": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "types": ["vite/client"],
+    "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ESNext",
-    "types": ["vite/client"]
+    "noUnusedLocals": true,
+    "outDir": "./",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
   "exclude": ["dist", "node_modules", "public"],
   "extensions": [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"]

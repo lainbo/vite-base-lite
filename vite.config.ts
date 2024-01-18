@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Inspector from 'vite-plugin-vue-inspector'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import Unocss from 'unocss/vite'
 
 export default defineConfig({
@@ -27,8 +27,6 @@ export default defineConfig({
       resolvers: [],
       dts: 'src/typings/components.d.ts',
     }),
-    Inspector({
-      toggleButtonVisibility: 'never',
-    }),
+    VueDevTools(),
   ],
 })
